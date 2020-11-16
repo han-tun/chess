@@ -41,7 +41,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">chess</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -230,6 +230,13 @@
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">scholars_mate</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="100%"></p>
 </div>
+<div id="motivation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#motivation" class="anchor"></a>Motivation</h2>
+<p>python-chess served as the inspiration (and backbone) for <a href="https://github.com/clente/chess">chess</a>. While the original version (and <a href="https://github.com/jbkunst/rchess"><code>{rchess}</code></a> for that matter) broadly handles “move generation, move validation” (with powerful classes and object-oriented syntax), <a href="https://github.com/clente/chess">chess</a> focuses on making it easy to create and explore PGNs as trees.</p>
+<p>By narrowing down the scope of the API, I believe the package becomes more intuitive to people who just want to quickly create shareable game analyses or easily explore other people’s games without having to resort to point and click software.</p>
+<p><a href="https://github.com/clente/chess">chess</a>’s first use was helping me study Bobby Fischer’s <em>My 60 Memorable Games</em>. After some very difficult <a href="data-raw/m60mg.R">parsing</a>, I was able to convert the whole book to PGN and <a href="https://lichess.org/study/4zOTO2ki">upload it to lichess</a>, but I still felt like the interface was too clumsy…</p>
+</div>
 <div id="roadmap" class="section level2">
 <h2 class="hasAnchor">
 <a href="#roadmap" class="anchor"></a>Roadmap</h2>
@@ -262,6 +269,9 @@ Unit tests</li>
 <input type="checkbox" disabled checked>
 Advanced usage</li>
 <li>
+<input type="checkbox" disabled checked>
+Styler</li>
+<li>
 <input type="checkbox" disabled>
 CRAN</li>
 <li>
@@ -275,17 +285,15 @@ Shiny?</li>
 Stockfish API?</li>
 </ul>
 </div>
-<div id="motivation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#motivation" class="anchor"></a>Motivation</h2>
-<p>python-chess served as the inspiration (and backbone) for <a href="https://github.com/clente/chess">chess</a>. While the original version (and <a href="https://github.com/jbkunst/rchess"><code>{rchess}</code></a> for that matter) broadly handles “move generation, move validation” (with powerful classes and object-oriented syntax), <a href="https://github.com/clente/chess">chess</a> focuses on making it easy to create and explore PGNs as trees.</p>
-<p>By narrowing down the scope of the API, I believe the package becomes more intuitive to people who just want to quickly create shareable game analyses or easily explore other people’s games without having to resort to point and click software.</p>
-<p><a href="https://github.com/clente/chess">chess</a>’s first use was helping me study Bobby Fischer’s <em>My 60 Memorable Games</em>. After some very difficult <a href="data-raw/m60mg.R">parsing</a>, I was able to convert the whole book to PGN and <a href="https://lichess.org/study/4zOTO2ki">upload it to lichess</a>, but I still felt like the interface was too clumsy…</p>
-</div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
 <p>Please note that the chess project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+</div>
+<div id="license" class="section level2">
+<h2 class="hasAnchor">
+<a href="#license" class="anchor"></a>License</h2>
+<p><a href="https://github.com/clente/chess">chess</a> is licensed under the GPL 3 (or any later version at your option). Check out <a href="LICENSE.html">LICENSE.md</a> for the full text.</p>
 </div>
 </div>
   </div>
@@ -325,7 +333,7 @@ Stockfish API?</li>
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/clente/chess/actions"><img src="https://github.com/clente/chess/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
 <li><a href="https://CRAN.R-project.org/package=chess"><img src="https://www.r-pkg.org/badges/version/chess" alt="CRAN status"></a></li>
 <li><a href="https://codecov.io/gh/clente/chess?branch=master"><img src="https://codecov.io/gh/clente/chess/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
