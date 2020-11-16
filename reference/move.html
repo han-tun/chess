@@ -48,10 +48,10 @@
 
 <meta property="og:title" content="Make moves and create variations — move" />
 <meta property="og:description" content="Adding moves to a game works roughly in the same way as PGN.
-Strings are added as single moves, vectors of strings are added as a sequence
-of moves, and lists are added as variations (siblings) to the last move
-made. After adding moves, the game node returned corresponds to the last
-move of the mainline. See the examples for more information." />
+Strings are added as single moves, and lists are added as variations
+(siblings) to the last move made. After adding moves, the game node returned
+corresponds to the last move of the mainline. See the examples for more
+information." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -102,6 +102,18 @@ move of the mainline. See the examples for more information." />
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/advanced.html">Advanced usage</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -130,10 +142,10 @@ move of the mainline. See the examples for more information." />
 
     <div class="ref-description">
     <p>Adding moves to a game works roughly in the same way as PGN.
-Strings are added as single moves, vectors of strings are added as a sequence
-of moves, and lists are added as variations (siblings) to the last move
-made. After adding moves, the game node returned corresponds to the last
-move of the mainline. See the examples for more information.</p>
+Strings are added as single moves, and lists are added as variations
+(siblings) to the last move made. After adding moves, the game node returned
+corresponds to the last move of the mainline. See the examples for more
+information.</p>
     </div>
 
     <pre class="usage"><span class='fu'>move</span><span class='op'>(</span><span class='va'>game</span>, <span class='va'>...</span>, notation <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"san"</span>, <span class='st'>"uci"</span>, <span class='st'>"xboard"</span><span class='op'>)</span><span class='op'>)</span></pre>
