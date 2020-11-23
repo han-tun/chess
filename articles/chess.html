@@ -71,7 +71,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/clente/chess/">
+  <a href="https://github.com/curso-r/chess/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -93,14 +93,14 @@
       <h1 data-toc-skip>Get started</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/clente/chess/blob/master/vignettes/chess.Rmd"><code>vignettes/chess.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/curso-r/chess/blob/master/vignettes/chess.Rmd"><code>vignettes/chess.Rmd</code></a></small>
       <div class="hidden name"><code>chess.Rmd</code></div>
 
     </div>
 
     
     
-<p>Making moves with <a href="https://github.com/clente/chess">chess</a> is easier than it looks. It has a PGN-like syntax that facilitates interaction and translation, so using the package should not be a problem if you have ever seen moves written down in a chess book.</p>
+<p>Making moves with <a href="https://github.com/curso-r/chess">chess</a> is easier than it looks. It has a PGN-like syntax that facilitates interaction and translation, so using the package should not be a problem if you have ever seen moves written down in a chess book.</p>
 <p>If you haven’t, <a href="https://en.wikipedia.org/wiki/Portable_Game_Notation">PGN</a> means Portable Game Notation and is “a standard plain text format for recording chess games (both the moves and related data), which can be read by humans and is also supported by most chess software.”</p>
 <p>Here you can see the beginning of a game between Fischer and Sherwin, played in 1957 at the New Jersey Open Championship. Each move is recorded in <a href="https://en.wikipedia.org/wiki/Algebraic_chess_notation">SAN</a> and numbers followed by periods indicate the turn for each pair of half-moves. A number followed by three periods indicates the second half of the turn, or the move made by Black. Finally, parentheses indicate variations (not to be confused with <a href="https://en.wikipedia.org/wiki/Chess_variants">variants</a>) which are “commentaries” made by the annotator, showcasing one or more alternatives for a move and how the game could have been.</p>
 <pre><code>1. e4 c5 2. Nf3 e6 3. d3 Nc6 4. g3 Nf6 ( 4... d5 5. Nbd2 Bd6 6. Bg2 Nge7 7. O-O
@@ -114,9 +114,9 @@ e4-&gt; c5-&gt; Nf3-&gt; e6-&gt; d3-&gt; Nc6-&gt; g3-&gt; Nf6-&gt; Bg2-&gt;  Be7
 <p>In R, the only way we can create a data structure that allows for nested substructures is with <code><a href="https://rdrr.io/r/base/list.html">list()</a></code>s. If each move was a string and each parenthesis (branch of the tree) was a <code><a href="https://rdrr.io/r/base/list.html">list()</a></code>, we would have something like this:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="st">"e4"</span>, <span class="st">"c5"</span>, <span class="st">"Nf3"</span>, <span class="st">"e6"</span>, <span class="st">"d3"</span>, <span class="st">"Nc6"</span>, <span class="st">"g3"</span>, <span class="st">"Nf6"</span>, <span class="kw">list</span>(<span class="st">"d5"</span>, <span class="st">"Nbd2"</span>, <span class="st">"Bd6"</span>, <span class="st">"Bg2"</span>,</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="st">"Nge7"</span>, <span class="st">"O-O"</span>, <span class="st">"O-O"</span>, <span class="st">"Nh4"</span>), <span class="st">"Bg2"</span>, <span class="st">"Be7"</span>, <span class="st">"O-O"</span>, <span class="st">"O-O"</span>, <span class="kw">list</span>(<span class="st">"d5"</span>), <span class="st">"Nbd2"</span></span></code></pre></div>
-<p>Now we can pass this on to <code><a href="../reference/move.html">move()</a></code> and create a faithful reproduction to Fisher’s annotations in <a href="https://github.com/clente/chess">chess</a>, and, since the function is very flexible, you can also break down the tree into multiple moves:</p>
+<p>Now we can pass this on to <code><a href="../reference/move.html">move()</a></code> and create a faithful reproduction to Fisher’s annotations in <a href="https://github.com/curso-r/chess">chess</a>, and, since the function is very flexible, you can also break down the tree into multiple moves:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/clente/chess">chess</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/curso-r/chess">chess</a></span><span class="op">)</span>
 
 <span class="co"># Add moves to a new game</span>
 <span class="va">fischer_sherwin</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/game.html">game</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>

@@ -74,7 +74,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/clente/chess/">
+  <a href="https://github.com/curso-r/chess/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -100,15 +100,15 @@
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h2>
-<p><a href="https://github.com/clente/chess">chess</a> is an <em>opinionated</em> wrapper for R around <a href="https://github.com/niklasf/python-chess">python-chess</a>, an amazing library created by <a href="https://github.com/niklasf">Niklas Fiekas</a>. It allows users to read and write <a href="https://en.wikipedia.org/wiki/Portable_Game_Notation">PGN</a> files as well as create and explore game trees such as the ones seen in chess books.</p>
+<p><a href="https://github.com/curso-r/chess">chess</a> is an <em>opinionated</em> wrapper for R around <a href="https://github.com/niklasf/python-chess">python-chess</a>, an amazing library created by <a href="https://github.com/niklasf">Niklas Fiekas</a>. It allows users to read and write <a href="https://en.wikipedia.org/wiki/Portable_Game_Notation">PGN</a> files as well as create and explore game trees such as the ones seen in chess books.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the most recent version of <a href="https://github.com/clente/chess">chess</a> from <a href="https://github.com/clente/chess">GitHub</a> with:</p>
+<p>You can install the most recent version of <a href="https://github.com/curso-r/chess">chess</a> from <a href="https://github.com/curso-r/chess">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"clente/chess"</span><span class="op">)</span></code></pre></div>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"curso-r/chess"</span><span class="op">)</span></code></pre></div>
 <p>This should automatically install python-chess to your <a href="https://github.com/rstudio/reticulate">reticulate</a> environment, but you can also explicitly do it with a convenient function:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">chess</span><span class="fu">::</span><span class="fu"><a href="reference/install_chess.html">install_chess</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
@@ -118,7 +118,7 @@
 <a href="#example" class="anchor"></a>Example</h2>
 <p>To read an existing game, simply use <code><a href="reference/read_game.html">read_game()</a></code>. To explore it you can use <code><a href="reference/forward.html">forward()</a></code>/<code><a href="reference/back.html">back()</a></code>, as well as <code><a href="reference/variations.html">variations()</a></code>/<code><a href="reference/variation.html">variation()</a></code> to see all variations listed for the next move and choose one of them.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/clente/chess">chess</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/curso-r/chess">chess</a></span><span class="op">)</span>
 
 <span class="co"># Read first game from My 60 Memorable Games</span>
 <span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"m60mg.pgn"</span>, package <span class="op">=</span> <span class="st">"chess"</span><span class="op">)</span>
@@ -200,7 +200,7 @@
 <span class="co">#&gt; P P P P . P P P</span>
 <span class="co">#&gt; R N B . K . N R</span></code></pre></div>
 <p>Note that there are many ways to structure the input to <code><a href="reference/move.html">move()</a></code>. See <code><a href="articles/chess.html">vignette("chess")</a></code> for more information.</p>
-<p><a href="https://github.com/clente/chess">chess</a> also features many ways of seeing both the game as a whole and the board at a specific point in time.</p>
+<p><a href="https://github.com/curso-r/chess">chess</a> also features many ways of seeing both the game as a whole and the board at a specific point in time.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Print with unicode (doesn't look good on GitHub)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">scholars_mate</span>, unicode <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
@@ -233,9 +233,9 @@
 <div id="motivation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#motivation" class="anchor"></a>Motivation</h2>
-<p>python-chess served as the inspiration (and backbone) for <a href="https://github.com/clente/chess">chess</a>. While the original version (and <a href="https://github.com/jbkunst/rchess"><code>{rchess}</code></a> for that matter) broadly handles “move generation, move validation” (with powerful classes and object-oriented syntax), <a href="https://github.com/clente/chess">chess</a> focuses on making it easy to create and explore PGNs as trees.</p>
+<p>python-chess served as the inspiration (and backbone) for <a href="https://github.com/curso-r/chess">chess</a>. While the original version (and <a href="https://github.com/jbkunst/rchess"><code>{rchess}</code></a> for that matter) broadly handles “move generation, move validation” (with powerful classes and object-oriented syntax), <a href="https://github.com/curso-r/chess">chess</a> focuses on making it easy to create and explore PGNs as trees.</p>
 <p>By narrowing down the scope of the API, I believe the package becomes more intuitive to people who just want to quickly create shareable game analyses or easily explore other people’s games without having to resort to point and click software.</p>
-<p><a href="https://github.com/clente/chess">chess</a>’s first use was helping me study Bobby Fischer’s <em>My 60 Memorable Games</em>. After some very difficult <a href="https://github.com/clente/chess/blob/master/data-raw/m60mg.R">parsing</a>, I was able to convert the whole book to PGN and <a href="https://lichess.org/study/4zOTO2ki">upload it to lichess</a>, but I still felt like the interface was too clumsy…</p>
+<p><a href="https://github.com/curso-r/chess">chess</a>’s first use was helping me study Bobby Fischer’s <em>My 60 Memorable Games</em>. After some very difficult <a href="https://github.com/curso-r/chess/blob/master/data-raw/m60mg.R">parsing</a>, I was able to convert the whole book to PGN and <a href="https://lichess.org/study/4zOTO2ki">upload it to lichess</a>, but I still felt like the interface was too clumsy…</p>
 </div>
 <div id="roadmap" class="section level2">
 <h2 class="hasAnchor">
@@ -293,7 +293,7 @@ Stockfish API?</li>
 <div id="license" class="section level2">
 <h2 class="hasAnchor">
 <a href="#license" class="anchor"></a>License</h2>
-<p><a href="https://github.com/clente/chess">chess</a> is licensed under the GPL 3 (or any later version at your option). Check out <a href="https://github.com/clente/chess/blob/master/LICENSE.md">LICENSE.md</a> for the full text.</p>
+<p><a href="https://github.com/curso-r/chess">chess</a> is licensed under the GPL 3 (or any later version at your option). Check out <a href="https://github.com/curso-r/chess/blob/master/LICENSE.md">LICENSE.md</a> for the full text.</p>
 </div>
 </div>
   </div>
@@ -302,9 +302,9 @@ Stockfish API?</li>
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/clente/chess/">https://​github.com/​clente/​chess/​</a>
+<li>Browse source code at <br><a href="https://github.com/curso-r/chess/">https://​github.com/​curso-r/​chess/​</a>
 </li>
-<li>Report a bug at <br><a href="https://github.com/clente/chess/issues">https://​github.com/​clente/​chess/​issues</a>
+<li>Report a bug at <br><a href="https://github.com/curso-r/chess/issues">https://​github.com/​curso-r/​chess/​issues</a>
 </li>
 </ul>
 </div>
@@ -332,10 +332,10 @@ Stockfish API?</li>
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/clente/chess/actions"><img src="https://github.com/clente/chess/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://github.com/curso-r/chess/actions"><img src="https://github.com/curso-r/chess/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
 <li><a href="https://CRAN.R-project.org/package=chess"><img src="https://www.r-pkg.org/badges/version/chess" alt="CRAN status"></a></li>
-<li><a href="https://codecov.io/gh/clente/chess?branch=master"><img src="https://codecov.io/gh/clente/chess/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://codecov.io/gh/curso-r/chess?branch=master"><img src="https://codecov.io/gh/curso-r/chess/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 </div>
