@@ -50,8 +50,8 @@
 <meta property="og:description" content="Adding moves to a game works roughly in the same way as PGN.
 Strings are added as single moves, and lists are added as variations
 (siblings) to the last move made. After adding moves, the game node returned
-corresponds to the last move of the mainline. See the examples for more
-information." />
+corresponds to the last move of the mainline. See vignette(&quot;chess&quot;) for
+more information." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -84,7 +84,7 @@ information." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">chess</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
       </span>
     </div>
 
@@ -150,8 +150,8 @@ information." />
     <p>Adding moves to a game works roughly in the same way as PGN.
 Strings are added as single moves, and lists are added as variations
 (siblings) to the last move made. After adding moves, the game node returned
-corresponds to the last move of the mainline. See the examples for more
-information.</p>
+corresponds to the last move of the mainline. See <code><a href='../articles/chess.html'>vignette("chess")</a></code> for
+more information.</p>
     </div>
 
     <pre class="usage"><span class='fu'>move</span><span class='op'>(</span><span class='va'>game</span>, <span class='va'>...</span>, notation <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"san"</span>, <span class='st'>"uci"</span>, <span class='st'>"xboard"</span><span class='op'>)</span><span class='op'>)</span></pre>
@@ -178,30 +178,6 @@ way parentheses work in PGN)</p></td>
 
     <p>A game node</p>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'><a href='game.html'>game</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>move</span><span class='op'>(</span><span class='st'>"e4"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>move</span><span class='op'>(</span><span class='st'>"e5"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>move</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>"e6"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>move</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>"d5"</span>, <span class='st'>"Bc4"</span>, <span class='st'>"dxc4"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='back.html'>back</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; 1. e4 e5 ( 1... e6 ) ( 1... d5 2. Bc4 dxc4 )</div><div class='input'>
-<span class='fu'><a href='game.html'>game</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>move</span><span class='op'>(</span><span class='st'>"e4"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>move</span><span class='op'>(</span><span class='st'>"e5"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>move</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>"e6"</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>"d5"</span>, <span class='st'>"Bc4"</span>, <span class='st'>"dxc4"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='back.html'>back</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; 1. e4 e5 ( 1... e6 ) ( 1... d5 2. Bc4 dxc4 )</div><div class='input'>
-<span class='fu'><a href='game.html'>game</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>move</span><span class='op'>(</span><span class='st'>"e4"</span>, <span class='st'>"e5"</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>"e6"</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>"d5"</span>, <span class='st'>"Bc4"</span>, <span class='st'>"dxc4"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='back.html'>back</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; 1. e4 e5 ( 1... e6 ) ( 1... d5 2. Bc4 dxc4 )</div><div class='input'><span class='co'># }</span>
-
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
