@@ -4,5 +4,6 @@ pkgdown_sha: ~
 articles:
   advanced: advanced.html
   chess: chess.html
-last_built: 2020-12-04T18:24Z
+  games: games.html
+last_built: 2020-12-04T19:44Z
 
